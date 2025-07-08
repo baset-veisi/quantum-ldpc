@@ -1,7 +1,7 @@
 # Quantum LDPC Codes via Asymmetric Product Constructions
 
 > **End‑to‑end research prototype — theory ⇄ simulation ⇄ analysis**\
-> Developed by **Baset Veisy** (2025) as part of the Quantum Error‑Correction research track.
+> Developed as part of the Quantum Error‑Correction research track.
 
 &#x20;&#x20;
 
@@ -17,7 +17,7 @@ Key achievements:
 - **Tight analytic & numerical bounds** on minimum distance after row deletions, verified up to *n* = 8 using a custom **Simulated Annealing** search.
 - Formal conjectures on scaling laws: *d*Z(n) ≈ ⌊n⁄2⌋² for one‑row deletions and O(n²) for carefully chosen O(1) deletions.
 
-The full 25‑page report lives in [`paper/Quantum_LDPC_report.pdf`](paper/Quantum_LDPC_report.pdf).
+The full 25‑page report lives in [`paper/cqec_course_research_paper.pdf`](paper/cqec_course_research_paper.pdf).
 
 ---
 
@@ -27,15 +27,12 @@ The full 25‑page report lives in [`paper/Quantum_LDPC_report.pdf`](paper/Quant
 quantum-ldpc/
 ├── paper/                 # Peer‑review‑ready report (LaTeX → PDF)
 ├── matlab/                # Matlab scripts for distance computation & SA optimiser
-├── data/                  # Pre‑computed PCM matrices & distance tables (.mat)
-└── notebooks/             # Jupyter sanity‑checks & visualisations
 ```
 
 | Path         | Highlight                                                      | Technologies                   |
 | ------------ | -------------------------------------------------------------- | ------------------------------ |
 | `paper/`     | 25‑page LaTeX report with proofs, tables & figures             | **LaTeX**, TikZ, Biber         |
 | `matlab/`    | Exhaustive search & **Simulated Annealing** distance optimiser | MATLAB, GF(2) linear algebra   |
-| `notebooks/` | Interactive demos of PCM structure & syndrome statistics       | **Python** (NumPy, Matplotlib) |
 
 ---
 
@@ -63,10 +60,6 @@ cd quantum-ldpc
 
 # MATLAB workflow (distance calculation for n=6)
 matlab -batch "run('matlab/run_distance_n6.m')"
-
-# Python notebook quick‑look
-pip install -r notebooks/requirements.txt
-jupyter lab notebooks/PCM_visualisation.ipynb
 ```
 
 Hardware notes: exhaustive distance search beyond n=7 requires > 32 GB RAM; for n=8 we default to the Simulated Annealing heuristic (runtime ≈ 4 h on M1 Air).
@@ -86,11 +79,3 @@ PRs & discussions welcome — let’s push Quantum LDPC codes to fault‑toler
 ## 📜 License
 
 Released under the **MIT License** (see `LICENSE`). You’re free to use, modify & cite — a note of attribution is appreciated.
-
----
-
-## 👋 About the author
-
-I’m **Baset Veisy**, a physics‑to‑quantum‑software convert passionate about bridging abstract QEC theory and real‑world quantum devices.\
-Let’s connect on [LinkedIn](https://linkedin.com/in/basetveisy) or discuss ideas via [GitHub Issues](https://github.com/BasetV/quantum-ldpc/issues).
-
